@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Catalogue</title>
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        #car-list {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .car {
+            display: table-row;
+        }
+
+        .car h2 {
+            font-size: 1.2rem;
+        }
+
+        .car p {
+            display: table-cell;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .car p strong {
+            font-weight: bold;
+        }
+
+        .car:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Car Catalogue</h1>
+        <a href="help.html" class="help-button">Help</a>
+
+        <style>
+            .help-button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff; 
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+        
+            .help-button:hover {
+                background-color: #0056b3; 
+            }
+        </style>
+    </header>
+    
+    <section id="car-list">
+        <div class="car" onclick="showCarUnavailablePopup('Car 1')">
+            <a href="#">Car 1</a>
+            <p><strong>Make:</strong> Ford</p>
+            <p><strong>Model:</strong> Fusion</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $25,000</p>
+        </div>
+
+        <div class="car" onclick="showCarUnavailablePopup('Car 2')">
+            <a href="#">Car 2</a>
+            <p><strong>Make:</strong> Toyota</p>
+            <p><strong>Model:</strong> Camry</p>
+            <p><strong>Year:</strong> 2018</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $18,500</p>
+        </div>
+
+        <div class="car" onclick="showCarUnavailablePopup('Car 3')">
+            <a href="#">Car 3</a>
+            <p><strong>Make:</strong> Honda</p>
+            <p><strong>Model:</strong> Civic</p>
+            <p><strong>Year:</strong> 2019</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $16,800</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 4')">
+            <a href="#">Car 4</a>
+            <p><strong>Make:</strong> Chevrolet</p>
+            <p><strong>Model:</strong> Malibu</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $23,500</p>
+        </div>
+        
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 5')">
+            <a href="#">Car 5</a>
+            <p><strong>Make:</strong> Ford</p>
+            <p><strong>Model:</strong> Mustang</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $31,800</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 6')">
+            <a href="#">Car 6</a>
+            <p><strong>Make:</strong> Toyota</p>
+            <p><strong>Model:</strong> Camry</p>
+            <p><strong>Year:</strong> 2022</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $28,900</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 7')">
+            <a href="#">Car 7</a>
+            <p><strong>Make:</strong> Honda</p>
+            <p><strong>Model:</strong> Accord</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $29,700</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 8')">
+            <a href="#">Car 8</a>
+            <p><strong>Make:</strong> Nissan</p>
+            <p><strong>Model:</strong> Rogue</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $25,400</p>
+        </div>
+        
+        <div class="car" onclick="showCarAvailablePopup('Car 9')">
+            <a href="#">Car 9</a>
+            <p><strong>Make:</strong> Hyundai</p>
+            <p><strong>Model:</strong> Elantra</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $21,900</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 10')">
+            <a href="#">Car 10</a>
+            <p><strong>Make:</strong> Kia</p>
+            <p><strong>Model:</strong> Sportage</p>
+            <p><strong>Year:</strong> 2022</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $26,500</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 11')">
+            <a href="#">Car 11</a>
+            <p><strong>Make:</strong> Subaru</p>
+            <p><strong>Model:</strong> Impreza</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $19,800</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 12')">
+            <a href="#">Car 12</a>
+            <p><strong>Make:</strong> BMW</p>
+            <p><strong>Model:</strong> X5</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $55,200</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 13')">
+            <a href="#">Car 13</a>
+            <p><strong>Make:</strong> Mercedes-Benz</p>
+            <p><strong>Model:</strong> GLE</p>
+            <p><strong>Year:</strong> 2022</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $61,500</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 14')">
+            <a href="#">Car 14</a>
+            <p><strong>Make:</strong> Audi</p>
+            <p><strong>Model:</strong> Q5</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $47,800</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 15')">
+            <a href="#">Car 15</a>
+            <p><strong>Make:</strong> Lexus</p>
+            <p><strong>Model:</strong> RX</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $38,500</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 16')">
+            <a href="#">Car 16</a>
+            <p><strong>Make:</strong> GMC</p>
+            <p><strong>Model:</strong> Terrain</p>
+            <p><strong>Year:</strong> 2019</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $27,200</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 17')">
+            <a href="#">Car 17</a>
+            <p><strong>Make:</strong> Jaguar</p>
+            <p><strong>Model:</strong> E-PACE</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $43,900</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 18')">
+            <a href="#">Car 18</a>
+            <p><strong>Make:</strong> Tesla</p>
+            <p><strong>Model:</strong> Model S</p>
+            <p><strong>Year:</strong> 2022</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $79,800</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 19')">
+            <a href="#">Car 19</a>
+            <p><strong>Make:</strong> Volkswagen</p>
+            <p><strong>Model:</strong> Jetta</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $24,500</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 20')">
+            <a href="#">Car 20</a>
+            <p><strong>Make:</strong> Porsche</p>
+            <p><strong>Model:</strong> Cayenne</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $59,500</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 21')">
+            <a href="#">Car 21</a>
+            <p><strong>Make:</strong> Land Rover</p>
+            <p><strong>Model:</strong> Range Rover</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $85,200</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 22')">
+            <a href="#">Car 22</a>
+            <p><strong>Make:</strong> Buick</p>
+            <p><strong>Model:</strong> Encore</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $21,800</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 23')">
+            <a href="#">Car 23</a>
+            <p><strong>Make:</strong> Cadillac</p>
+            <p><strong>Model:</strong> XT5</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $42,900</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 24')">
+            <a href="#">Car 24</a>
+            <p><strong>Make:</strong> Infiniti</p>
+            <p><strong>Model:</strong> Q50</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $29,500</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 25')">
+            <a href="#">Car 25</a>
+            <p><strong>Make:</strong> Acura</p>
+            <p><strong>Model:</strong> MDX</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $44,200</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 26')">
+            <a href="#">Car 26</a>
+            <p><strong>Make:</strong> Mini</p>
+            <p><strong>Model:</strong> Cooper</p>
+            <p><strong>Year:</strong> 2022</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $28,500</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 27')">
+            <a href="#">Car 27</a>
+            <p><strong>Make:</strong> Subaru</p>
+            <p><strong>Model:</strong> Crosstrek</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $26,700</p>
+        </div>
+        
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 28')">
+            <a href="#">Car 28</a>
+            <p><strong>Make:</strong> Nissan</p>
+            <p><strong>Model:</strong> Altima</p>
+            <p><strong>Year:</strong> 2017</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $14,200</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 29')">
+            <a href="#">Car 29</a>
+            <p><strong>Make:</strong> Ford</p>
+            <p><strong>Model:</strong> Escape</p>
+            <p><strong>Year:</strong> 2020</p>
+            <p><strong>Condition:</strong> New</p>
+            <p><strong>Price:</strong> $27,900</p>
+        </div>
+        
+        <div class="car" onclick="showCarUnavailablePopup('Car 30')">
+            <a href="#">Car 30</a>
+            <p><strong>Make:</strong> Toyota</p>
+            <p><strong>Model:</strong> RAV4</p>
+            <p><strong>Year:</strong> 2018</p>
+            <p><strong>Condition:</strong> Used</p>
+            <p><strong>Price:</strong> $19,500</p>
+        </div>
+        
+        
+    </section>
+    <div class="navigation-bar">
+        <a href="catalogue.html" class="button">Catalogue</a>
+        <a href="aboutus.html" class="button">Get a car!</a>
+        <a href="index.html" class="button">Home</a>
+    </div>
+
+    <div id="popup">
+        <div class="popup-content">
+            <p>Sorry, this car is unavailable.</p>
+            <a id="close" href="#">Close</a>
+        </div>
+    </div>
+
+    <div id="popup2">
+        <div class="popup-content2">
+            <p>This car is available!</p>
+            <a href="form.html">Click here!</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Your Name</p>
+    </footer>
+
+    <script>
+        var popup = document.getElementById("popup");
+
+        popup.style.display = "none";
+
+        var close = document.getElementById("close");
+
+        close.onclick = function() {
+            popup.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+
+        function showCarUnavailablePopup(carName) {
+            popup.style.display = "block";
+        }
+
+        function showCarAvailablePopup(carName) {
+            alert("The " + carName + " is available!");
+        }
+
+
+
+        var popup2 = document.getElementById("popup2");
+        popup2.style.display = "none";
+        
+        function showCarAvailablePopup(carName) {
+            popup2.style.display = "block";
+        }
+
+    </script>
+</body>
+</html>

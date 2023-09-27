@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .pulsating-box {
+            position: absolute;
+            right: 150px; 
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            animation: pulsate 1.5s infinite;
+            max-width: 300px; 
+        }
+
+        @keyframes pulsate {
+            0% {
+                font-size: 50px;
+            }
+            50% {
+                font-size: 65px;
+            }
+            100% {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pulsating-box" onclick="window.location.href='index.html'">Return home</div>
+
+    <title>Car Purchase Form</title>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Purchase Form</title>
+</head>
+<body>
+    <h1>Car Purchase Form</h1>
+    <form action="success.html" method="POST" onsubmit="return validateForm()"></form>
+    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required><br><br>
+    
+    <input type="text" id="address" name="address" placeholder="Enter your address" required><br><br>
+
+    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required><br><br>
+    
+    <input type="text" id="city" name="city" placeholder="Enter your city" required><br><br>
+    
+    <input type="text" id="creditCard" name="creditCard" placeholder="Enter your credit card information" required><br><br>
+    
+
+
+        <label for="age">Zip Code:</label>
+        <input type="range" id="age" name="age" min="0" max="99999" value="0">
+        <span id="ageValue">0</span> <br><br>
+
+
+        <select id="country" name="country">
+            <!-- JavaScript will populate the options here -->
+        </select><br><br>
+
+
+        <label for="submissionLock">Lock Submission</label>
+        <input type="range" id="submissionLock" name="submissionLock" min="0" max="1" step="1" value="0">
+
+        <style> 
+        button {
+            padding: 5px 10px; /* Adjust the padding to control the hitbox size */
+            border: none;
+            background-color: transparent;
+        }
+        </style>
+        <button type="button" onclick="submitForm()">OK</button>
+    </form>
+
+    <script>
+       
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+      
+        const countries = [
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia and Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cabo Verde",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Central African Republic",
+            "Chad",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros",
+            "Congo",
+            "Costa Rica",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czechia",
+            "Democratic Republic of the Congo",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Eswatini",
+            "Ethiopia",
+            "Fiji",
+            "Finland",
+            "France",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Holy See",
+            "Honduras",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Israel",
+            "Italy",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kiribati",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Marshall Islands",
+            "Mauritania",
+            "Mauritius",
+            "Mexico",
+            "Micronesia",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar (formerly Burma)",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Netherlands",
+            "New Zealand",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "North Korea",
+            "North Macedonia (formerly Macedonia)",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Palau",
+            "Palestine State",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Qatar",
+            "Romania",
+            "Russia",
+            "Rwanda",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "Samoa",
+            "San Marino",
+            "Sao Tome and Principe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Solomon Islands",
+            "Somalia",
+            "South Africa",
+            "South Korea",
+            "South Sudan",
+            "Spain",
+            "Sri Lanka",
+            "Sudan",
+            "Suriname",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "Timor-Leste",
+            "Togo",
+            "Tonga",
+            "Trinidad and Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Tuvalu",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
+            "United Kingdom",
+            "United States of America",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe",
+            "USA"
+        ];
+
+
+        shuffleArray(countries);
+
+
+        const countryDropdown = document.getElementById("country");
+
+
+        countries.forEach(country => {
+            const option = document.createElement("option");
+            option.value = country;
+            option.textContent = country;
+            countryDropdown.appendChild(option);
+        });
+
+
+
+        const ageSlider = document.getElementById("age");
+        const ageValue = document.getElementById("ageValue");
+
+
+        ageSlider.addEventListener("input", function() {
+            ageValue.textContent = ageSlider.value;
+
+
+    
+        });
+
+    document.getElementById("submissionLock").addEventListener("input", function() {
+        const lockLabel = document.getElementById("lockLabel");
+        lockLabel.textContent = this.value === "0" ? "No" : "Yes";
+    });
+
+
+
+    function submitForm() {
+        const sliderValue = document.getElementById("submissionLock").value;
+        const selectedCountry = document.getElementById("country").value;
+        const zipCode = parseInt(document.getElementById("age").value);
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const address = document.getElementById("address").value;
+        const city = document.getElementById("city").value;
+        const creditCard = document.getElementById("creditCard").value;
+
+
+
+        if (sliderValue === "1") {
+
+        if (selectedCountry !== "USA") {
+
+            alert("You can only purchase a car in the USA. Please select USA as your country.");
+            return false;
+        }
+
+        if (zipCode < 20000 || zipCode > 30000) {
+            alert("Zip code must be between 20000 and 30000.");
+            return false; 
+        }
+
+        if (!firstName || !lastName || !address || !city) {
+            alert("Please fix mistakes");
+            return false;
+        }
+
+        if (creditCard.length !== 16) {
+        alert("Credit card number must be exactly 16 characters long.");
+        return false;
+        }
+
+        window.location.href = "success.html";
+    } else {
+        alert("Submission is locked. You cannot submit the form.");
+        return false; 
+    }
+}
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

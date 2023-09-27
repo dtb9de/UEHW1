@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="style.css"> <!-- Add your CSS file -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <div class="header-content">
+                        <span class="trademark">BUY N SELL CARS™</span>
+                        <span class="date" id="current-date"></span>
+                        <span class="timer" id="timer"></span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="navigation-bar">
+        <a href="#contact" class="button">Contact</a>
+        <a href="catalogue.html" class="button">Catalogue</a>
+        <a href="#more-information" class="button">More Information</a>
+        <a href="#sign-in" class="button">Sign In</a>
+    </div>
+    
+    <div class="bad-ui-container">
+        <form action="#" method="post">
+            <div class="input-container">
+                <label for="password">Create password:</label>
+                <input type="password" id="password" name="password" placeholder="Create password">
+            </div>
+            <div class="input-container">
+                <label for="username">Create username:</label>
+                <input type="text" id="username" name="username" placeholder="Create username">
+            </div>
+            <input type="submit" value="Sign In">
+        </form>
+    </div>
+
+    <!-- The pop-up box -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <p>Error: Signing in is currently unavailable! Check back later for future changes.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Your Name</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Add your JavaScript file -->
+
+</body>
+</html>
